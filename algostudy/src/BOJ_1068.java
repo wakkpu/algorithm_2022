@@ -4,6 +4,7 @@ import java.util.*;
 public class BOJ_1068 {
 	
 	static int N;
+	
 	static ArrayList<Integer>[] tree;
 
 	public static void main(String[] args) throws Exception {
