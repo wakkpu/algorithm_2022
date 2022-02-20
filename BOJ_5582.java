@@ -1,11 +1,10 @@
-package jungol.language_coder;
+
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-// table index out of bound
-// DP를 table이 아닌 list로 만들고 two pointer(i, j)로 접근 -> 왜 그랬을까?
+// DP를 table이 아닌 list로 만들고 two pointer(i, j)로 접근
 // -> table로 푸니까 간단히 풀어짐
 public class BOJ_5582 {
 

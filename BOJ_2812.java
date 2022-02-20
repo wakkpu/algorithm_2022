@@ -1,4 +1,4 @@
-package jungol.language_coder;
+
 
 import java.io.*;
 import java.util.*;

@@ -1,4 +1,4 @@
-package jungol.language_coder;
+
 
 import java.io.*;
 import java.util.*;
@@ -16,7 +16,7 @@ public class BOJ_4256 {
 		for(int i=start; i< end; i++) {
 			if(in[i] == pre[node]) {
 				postOrder(node+1, start, i);
-				postOrder(node+i-start+1, i+1, end);
+				postOrder(node-start+i+1, i+1, end);
 				System.out.printf(pre[node]+" ");
 			}
 		}

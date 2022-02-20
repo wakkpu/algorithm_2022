@@ -1,5 +1,3 @@
-package jungol.language_coder;
-
 import java.io.*;
 import java.util.*;
 
@@ -16,9 +14,7 @@ public class BOJ_1987 {
 	
 	public static void traversal(int si, int sj, int len) {
 		char curr = map[si][sj];
-		//System.out.println("current char: "+curr);
 		include.add(Character.valueOf(curr));
-		//System.out.println("include: "+include.toString());
 		for(int i=0; i<4; i++) {
 			int ni = si+di[i];
 			int nj = sj+dj[i];

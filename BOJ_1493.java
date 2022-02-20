@@ -1,4 +1,4 @@
-package jungol.language_coder;
+
 
 import java.io.*;
 import java.util.*;
@@ -39,7 +39,7 @@ public class BOJ_1493 {
 				stackCube(l, w, h-side);
 				stackCube(side, w-side, side);
 				stackCube(l-side, w, side);
-				return; // 호출만 하고 종료해야 함
+				return;
 			}
 		}
 		// 다 돌았는데도 큐브를 하나도 못 넣었다 -> 문제 못 품

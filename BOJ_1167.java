@@ -22,10 +22,10 @@ public class BOJ_1167 {
 			farthest = node;
 		}
 		
-		for(int i=0; i<graph[node].size(); i++) {
-			Node next = graph[node].get(i);
-			if(next.to == parent) continue;
-			dfs(next.to, node, next.weight+weight);
+		for(int i=0; i<graph[node].size(); i++) { // 현재 노드와 연결된 노드들을 방문
+			Node next = graph[node].get(i); // 다음 노드
+			if(next.to == parent) continue; // 다음 노드가 부모 노드라면 부모 노드로 돌아가지 않도록 pass
+			dfs(next.to, node, next.weight+weight); // 다음 노드, 현재 노드, 갱신된 가중치를 parameter로 재귀 실행.
 		}
 	}
 	

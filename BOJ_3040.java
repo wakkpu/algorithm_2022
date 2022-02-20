@@ -3,8 +3,8 @@
 import java.io.*;
 import java.util.*;
 
-public class BOJ_2309 {
-		
+public class BOJ_3040 {
+
 	public static void main(String[] args) throws Exception {
 		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -36,11 +36,8 @@ public class BOJ_2309 {
 			}
 		}
 		
-		Collections.sort(sol);
 		for(int i=0; i<7; i++) {
 			System.out.println(sol.get(i));
 		}
-		
 	}
-
 }
