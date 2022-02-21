@@ -14,7 +14,7 @@ public class BOJ_1260 {
 		N = Integer.parseInt(st.nextToken());
 		M = Integer.parseInt(st.nextToken());
 		V = Integer.parseInt(st.nextToken());
-		
+		 
 		// 그래프 인접 리스트
 		graph = new ArrayList[N+1];
 		for(int i=0; i<N+1; i++) {
