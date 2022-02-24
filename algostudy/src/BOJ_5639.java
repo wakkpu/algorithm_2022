@@ -8,11 +8,8 @@ public class BOJ_5639 {
 		
 		ArrayList<Integer> pre = new ArrayList<>();
 		
-		while(true) {
+		while(br.ready()) {
 			String str = br.readLine();
-			if(str == null || str.equals("")) {
-				break;
-			}
 			pre.add(Integer.parseInt(str));
 		}
 		
