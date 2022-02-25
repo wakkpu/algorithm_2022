@@ -56,7 +56,7 @@ public class BOJ_17144 {
 			
 			AirCleaner1(air1);
 			AirCleaner2(air2);
-			//printMap();
+			printMap();
 		}
 		
 		int sum = 0;
