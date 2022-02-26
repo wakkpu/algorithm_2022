@@ -49,7 +49,7 @@ public class BOJ_2098 {
 			int next = bitmask | (1<<i); 
             
 			// 경로가 없거나 i 도시를 이미 방문했을 경우 continue
-			if(map[curr][i] ==0 || (bitmask & (1<<i)) != 0) continue;
+			if(map[curr][i] == 0 || (bitmask & (1<<i)) != 0) continue;
 			
 			dp[curr][bitmask] = Math.min(dp[curr][bitmask], TSP(i, next) + map[curr][i]);
 		}
