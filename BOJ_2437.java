@@ -20,7 +20,7 @@ public class BOJ_2437 {
         int sum = 0;
         for(int i=0; i<N; i++) {
             int temp = nums[i];
-            if(sum+1 < temp) break;
+            if(sum+1 < temp) break; // 다음 원소가 누적합보다 커져버리면 만들 수 없다.
             sum += temp;
         }
 
