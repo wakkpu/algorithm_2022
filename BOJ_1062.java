@@ -17,10 +17,8 @@ public class BOJ_1062 {
 
         if(K < 5) {
             System.out.println(0);
-            return;
         } else if(K == 26) {
             System.out.println(N);
-            return;
         } else {
             choosed = new boolean[26];
             choosed['a'-'a'] = true;
