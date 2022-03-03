@@ -40,9 +40,9 @@ public class BOJ_14502 {
             for(int j=0; j<M; j++) {
                 map[i][j] = Integer.parseInt(st.nextToken());
                 if(map[i][j] == 1) {
-                    wallCount++;
+                    wallCount++; // 초기 벽 갯수
                 } else if(map[i][j] == 2) {
-                    virus.add(new Point(i, j));
+                    virus.add(new Point(i, j)); // 초기 바이러스 arraylist
                 }
             }
         }
@@ -90,7 +90,7 @@ public class BOJ_14502 {
                     if(ni < 0 || ni > N-1 || nj < 0 || nj > M-1) continue;
                     if(map[ni][nj] == 0 && !visited[ni][nj]) {
                         visited[ni][nj] = true;
-                        infected++;
+                        infected++; // 늘어난 바이러스 갯수
                         q.offer(new Point(ni, nj));
                     }
                 }
