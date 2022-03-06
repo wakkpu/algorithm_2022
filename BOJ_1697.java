@@ -12,11 +12,6 @@ public class BOJ_1697 {
         N = Integer.parseInt(st.nextToken());
         K = Integer.parseInt(st.nextToken());
 
-        if(N == K) {
-            System.out.println(0);
-            return;
-        }
-
         int count = bfs();
         System.out.println(count);
     }
