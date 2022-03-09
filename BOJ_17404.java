@@ -23,7 +23,6 @@ public class BOJ_17404 {
         int[][] DP = new int[N][3];
         int min = Integer.MAX_VALUE;
 
-        char[][] cmap = new char[N][3];
         // R, G, B로 시작하는 케이스 3개
         for(int i=0; i<3; i++) {
             for(int j=0; j<3; j++) {
