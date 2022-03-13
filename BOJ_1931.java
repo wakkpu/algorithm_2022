@@ -1,27 +1,25 @@
-
-
 import java.io.*;
 import java.util.*;
 
-class Meet implements Comparable<Meet> {
-	
-	public int start;
-	public int end;
-	
-	public Meet(int start, int end) {
-		this.start = start;
-		this.end = end;
-	}
-	
-	@Override
-	public int compareTo(Meet o) {
-		if(this.end == o.end)
-			return Integer.compare(this.start, o.start);
-		return Integer.compare(this.end, o.end);
-	}
-}
-
 public class BOJ_1931 {
+
+	static class Meet implements Comparable<Meet> {
+
+		public int start;
+		public int end;
+
+		public Meet(int start, int end) {
+			this.start = start;
+			this.end = end;
+		}
+
+		@Override
+		public int compareTo(Meet o) {
+			if(this.end == o.end)
+				return Integer.compare(this.start, o.start);
+			return Integer.compare(this.end, o.end);
+		}
+	}
 
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub

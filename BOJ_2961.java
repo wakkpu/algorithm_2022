@@ -1,22 +1,5 @@
-
-
 import java.io.*;
 import java.util.*;
-
-class Food {
-	int sour;
-	int bitter;
-	
-	public Food(int sour, int bitter) {
-		this.sour = sour;
-		this.bitter = bitter;
-	}
-
-	@Override
-	public String toString() {
-		return "Food [sour=" + sour + ", bitter=" + bitter + "]";
-	}
-}
 
 public class BOJ_2961 {
 
@@ -24,7 +7,22 @@ public class BOJ_2961 {
 	static int totalBitter;
 	static Food[] foods;
 	static int min;
-	
+
+	static class Food {
+		int sour;
+		int bitter;
+
+		public Food(int sour, int bitter) {
+			this.sour = sour;
+			this.bitter = bitter;
+		}
+
+		@Override
+		public String toString() {
+			return "Food [sour=" + sour + ", bitter=" + bitter + "]";
+		}
+	}
+
 	public static void combi(int toChoose, Food[] choosed, int startIdx) {
 		if(toChoose == 0) {
 			totalSour = 1;

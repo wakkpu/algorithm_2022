@@ -3,31 +3,32 @@
 import java.io.*;
 import java.util.*;
 
-class HW implements Comparable<HW>{
-	public int due;
-	public int score;
-
-	public HW(int due, int score) {
-		this.due = due;
-		this.score = score;
-	}
-
-	@Override
-	public String toString() {
-		return "HW [due=" + due + ", score=" + score + "]";
-	}
-
-	@Override
-	public int compareTo(HW hw) {
-		return hw.score - this.score;
-	}
-}
 /*
  * 그리디
  * 정렬해서 뒤에서부터 
  * 
  */
 public class BOJ_13904 {
+
+	static class HW implements Comparable<HW>{
+		public int due;
+		public int score;
+
+		public HW(int due, int score) {
+			this.due = due;
+			this.score = score;
+		}
+
+		@Override
+		public String toString() {
+			return "HW [due=" + due + ", score=" + score + "]";
+		}
+
+		@Override
+		public int compareTo(HW hw) {
+			return hw.score - this.score;
+		}
+	}
 
 	public static void main(String[] args) throws Exception {
 		

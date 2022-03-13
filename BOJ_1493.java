@@ -1,18 +1,5 @@
-
-
 import java.io.*;
 import java.util.*;
-
-
-class Cube {
-	public int side; // 변의 길이
-	public int num; // 갯수
-	
-	public Cube(int side, int num) {
-		this.side = side;
-		this.num = num;
-	}
-}
 
 public class BOJ_1493 {
 
@@ -20,6 +7,16 @@ public class BOJ_1493 {
 	static int N;
 	static Cube[] cubes;
 	static int usedCube;
+
+	static class Cube {
+		public int side; // 변의 길이
+		public int num; // 갯수
+
+		public Cube(int side, int num) {
+			this.side = side;
+			this.num = num;
+		}
+	}
 	
 	public static void stackCube(int l, int w, int h) {
 		if(!flag) {

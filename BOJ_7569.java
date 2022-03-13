@@ -1,19 +1,5 @@
-
-
 import java.io.*;
 import java.util.*;
-
-class Map {
-	public int x;
-	public int y;
-	public int z;
-	
-	public Map(int z, int x, int y) {
-		this.z = z;
-		this.x = x;
-		this.y = y;
-	}
-}
 
 public class BOJ_7569 {
 	
@@ -27,6 +13,18 @@ public class BOJ_7569 {
 	static int map[][][];
 	static int time = -1;
 	static int numZero = 0;
+
+	static class Map {
+		public int x;
+		public int y;
+		public int z;
+
+		public Map(int z, int x, int y) {
+			this.z = z;
+			this.x = x;
+			this.y = y;
+		}
+	}
 	
 	public static void BFS() {
 		while(!q.isEmpty()) {

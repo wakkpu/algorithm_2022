@@ -1,30 +1,28 @@
-
-
 import java.io.*;
 import java.util.*;
-
-class Edge implements Comparable<Edge> {
-	public int start;
-	public int end;
-	public int weight;
-	
-	public Edge(int start, int end, int weight) {
-		this.start = start;
-		this.end = end;
-		this.weight = weight;
-	}
-	
-	@Override
-	public int compareTo(Edge edge) {
-		return Integer.compare(this.weight, edge.weight);
-	}
-}
 
 public class BOJ_1197 {
 	
 	static int vertex, edge;
 	static Edge[] graph;
 	static int[] parents;
+
+	static class Edge implements Comparable<Edge> {
+		public int start;
+		public int end;
+		public int weight;
+
+		public Edge(int start, int end, int weight) {
+			this.start = start;
+			this.end = end;
+			this.weight = weight;
+		}
+
+		@Override
+		public int compareTo(Edge edge) {
+			return Integer.compare(this.weight, edge.weight);
+		}
+	}
 	
 	public static void make_set() {
 		for(int i = 1; i <= vertex; i++) {

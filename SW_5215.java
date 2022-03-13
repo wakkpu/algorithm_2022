@@ -1,27 +1,28 @@
 import java.io.*;
 import java.util.*;
 
-class Top {
-	
-	public int rate, calories;
-	
-	Top(int rate, int calories) {
-		this.rate = rate;
-		this.calories = calories;
-	}
-
-	@Override
-	public String toString() {
-		return "Top [rate=" + rate + ", calories=" + calories + "]";
-	}
-	
-}
 
 public class SW_5215 {
 
 	static Top[] toppings;
 	static int N, M, maxRate;
-	
+
+	static class Top {
+
+		public int rate, calories;
+
+		Top(int rate, int calories) {
+			this.rate = rate;
+			this.calories = calories;
+		}
+
+		@Override
+		public String toString() {
+			return "Top [rate=" + rate + ", calories=" + calories + "]";
+		}
+
+	}
+
 	public static void makeBurger(int num, int currRate, int currCal) {
 		if(currCal > M)
 			return;

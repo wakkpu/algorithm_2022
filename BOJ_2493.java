@@ -3,18 +3,18 @@
 import java.io.*;
 import java.util.*;
 
-class Tower {
-	int num;
-	int height;
-	
-	Tower(int num, int height) {
-		this.num = num;
-		this.height = height;
-	}
-}
-
 public class BOJ_2493 {
-	
+
+	static class Tower {
+		int num;
+		int height;
+
+		Tower(int num, int height) {
+			this.num = num;
+			this.height = height;
+		}
+	}
+
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 		BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
