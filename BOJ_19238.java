@@ -126,7 +126,7 @@ public class BOJ_19238 {
         return taxi.fuel;
     }
 
-    // 가장 가까운 고객 번호 반환
+    // 가장 가까운 고객 번호와 그 고객까지의 거리 반환
     public static int[] findClosestCustomer() {
         int closestCustomer = 1;
         int minDistance = Integer.MAX_VALUE;
@@ -173,7 +173,7 @@ public class BOJ_19238 {
             int sc = curr[1];
             int dist = curr[2];
 
-            if(sr == targetR && sc == targetC) {
+            if(sr == targetR && sc == targetC) { // 도착
                 return dist;
             }
 
