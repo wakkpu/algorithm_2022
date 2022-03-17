@@ -3,12 +3,12 @@ import java.util.*;
 
 public class BOJ_16202 {
 
-    static class Node {
+    static class Edge {
         int from;
         int to;
         int weight;
 
-        public Node(int from, int to, int weight) {
+        public Edge(int from, int to, int weight) {
             this.from = from;
             this.to = to;
             this.weight = weight;
@@ -16,7 +16,7 @@ public class BOJ_16202 {
     }
 
     static int N, M, K;
-    static Node[] graph;
+    static Edge[] graph;
     static int[] rep;
     static boolean[] available;
 
@@ -40,7 +40,7 @@ public class BOJ_16202 {
         M = Integer.parseInt(st.nextToken()); // 간선의 개수
         K = Integer.parseInt(st.nextToken()); // 턴의 수
 
-        graph = new Node[M+1];
+        graph = new Edge[M+1];
         available = new boolean[M+1];
         Arrays.fill(available, true);
 
@@ -49,7 +49,7 @@ public class BOJ_16202 {
             int from = Integer.parseInt(st.nextToken());
             int to = Integer.parseInt(st.nextToken());
 
-            graph[weight] = new Node(from, to, weight);
+            graph[weight] = new Edge(from, to, weight);
         }
 
         boolean flag = false;
@@ -76,7 +76,7 @@ public class BOJ_16202 {
         int min = M+1;
 
         for(int i=1; i<=M; i++) {
-            Node node = graph[i];
+            Edge node = graph[i];
             if(available[i]) {
                 if(union(node.from, node.to)) {
                     score += node.weight;
