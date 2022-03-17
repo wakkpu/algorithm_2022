@@ -68,8 +68,8 @@ public class BOJ_17070 {
         if(tail.r+1 == head.r && head.c == tail.c) {
             // 대각선 이동이 가능하다면
             if(head.c+1 <= N && map[head.r][head.c+1] == 0 &&
-                    head.r+1 <= N && head.c+1 <= N && map[head.r+1][head.c+1] == 0 &&
-                    head.r+1 <= N && map[head.r+1][head.c] == 0) {
+               head.r+1 <= N && head.c+1 <= N && map[head.r+1][head.c+1] == 0 &&
+               head.r+1 <= N && map[head.r+1][head.c] == 0) {
                 move(new Pos[]{new Pos(head.r, head.c), new Pos(head.r+1, head.c+1)});
             }
 
