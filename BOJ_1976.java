@@ -34,11 +34,9 @@ public class BOJ_1976 {
         }
 
         for(int i=0; i<M-1; i++) {
-            for(int j=i+1; j<M; j++) {
-                if(find(toGo[i]) != find(toGo[j])) {
-                    System.out.println("NO");
-                    return;
-                }
+            if(find(toGo[i]) != find(toGo[i+1])) {
+                System.out.println("NO");
+                return;
             }
         }
         System.out.println("YES");
