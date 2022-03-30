@@ -13,8 +13,7 @@ public class BOJ_3687 {
         Arrays.fill(dp, Long.MAX_VALUE);
 
         dp[2] = 1;
-        dp[3] = 7;
-        dp[4] = 4;
+        dp[3] = 7;        dp[4] = 4;
         dp[5] = 2;
         dp[6] = 6;
         dp[7] = 8;
