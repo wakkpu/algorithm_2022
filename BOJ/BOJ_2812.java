@@ -6,7 +6,6 @@ import java.util.*;
 public class BOJ_2812 {
 
 	public static void main(String[] args) throws Exception {
-		// TODO Auto-generated method stub
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		Stack<Character> stack = new Stack<>();
 		
