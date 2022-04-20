@@ -14,7 +14,6 @@ public class 베스트앨범 {
             this.unique = unique;
         }
 
-
         @Override
         public int compareTo(Song o) {
             if(this.play == o.play) {
@@ -24,6 +23,7 @@ public class 베스트앨범 {
             }
         }
     }
+
     public int[] solution(String[] genres, int[] plays) {
         List<Integer> result = new ArrayList<>();
 

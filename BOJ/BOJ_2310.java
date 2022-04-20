@@ -102,13 +102,16 @@ public class BOJ_2310 {
                 if(next.coin <= coin) {
                     visited[adj] = true;
                     dfs(adj, coin-next.coin);
+                    visited[adj] = false;
                 }
             } else if(next.name.equals("L")) {
                 visited[adj] = true;
                 dfs(adj, Math.max(next.coin, coin));
+                visited[adj] = false;
             } else {
                 visited[adj] = true;
                 dfs(adj, coin);
+                visited[adj] = false;
             }
         }
     }
