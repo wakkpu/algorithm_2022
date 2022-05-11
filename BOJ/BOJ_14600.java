@@ -34,8 +34,8 @@ public class BOJ_14600 {
         if(check(r, c+s, s)) map[r+s-1][c+s] = num;
         if(check(r+s, c+s, s)) map[r+s][c+s] = num;
 
-        printMap();
-        System.out.println();
+//        printMap();
+//        System.out.println();
 
         if(size == 2) return;
 
