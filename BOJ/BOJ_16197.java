@@ -54,7 +54,7 @@ public class BOJ_16197 {
         Coin s1 = coins[0];
         Coin s2 = coins[1];
         visited[0][s1.r][s1.c] = true;
-        visited[0][s2.r][s2.c] = true;
+        visited[1][s2.r][s2.c] = true;
 
         while(!q.isEmpty()) {
             int qSize = q.size();
