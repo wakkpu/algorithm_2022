@@ -5,7 +5,7 @@ import java.util.*;
 
 public class BOJ_10800 {
 
-    static class Ball {
+    static class Ball implements Comparable<Ball> {
         int number;
         int color;
         int size;
@@ -27,10 +27,16 @@ public class BOJ_10800 {
                     ", eaten=" + eaten +
                     '}';
         }
+
+        @Override
+        public int compareTo(Ball o) {
+            return Integer.compare(this.size, o.size);
+        }
     }
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         StringTokenizer st;
 
         int N = Integer.parseInt(br.readLine());
@@ -42,7 +48,7 @@ public class BOJ_10800 {
             balls[i] = new Ball(i+1, color, size, 0);
         }
 
-        Arrays.sort(balls, (o1, o2) -> o1.size - o2.size);
+        Arrays.sort(balls);
 
         int prefixSum = 0;
         int[] colorSum = new int[N+1];
@@ -56,9 +62,6 @@ public class BOJ_10800 {
             }
             answer[balls[i].number-1] = prefixSum - colorSum[balls[i].color];
         }
-
-        //Arrays.sort(balls, (o1, o2) -> o1.number - o2.number);
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
         for(int i=0; i<N; i++) {
             bw.write(answer[i]+"\n");
