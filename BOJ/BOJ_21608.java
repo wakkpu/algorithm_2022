@@ -34,14 +34,6 @@ public class BOJ_21608 {
             findBestSpot(entry.getKey());
         }
 
-//        System.out.println();
-//        for(int i=1; i<=N; i++) {
-//            for(int j=1; j<=N; j++) {
-//                System.out.print(map[i][j]+" ");
-//            }
-//            System.out.println();
-//        }
-
         long result = 0L;
         for(int i=1; i<=N; i++) {
             for(int j=1; j<=N; j++) {
@@ -60,22 +52,12 @@ public class BOJ_21608 {
         if(result.size() == 1) {
             int r = result.get(0)[0];
             int c = result.get(0)[1];
-//            for(int[] pos: result) {
-//                System.out.print("["+pos[0]+", "+pos[1]+"] ");
-//            }
-//            System.out.println();
-//            System.out.println(stdNum+" is case 1");
             map[r][c] = stdNum;
         } else {
             result = case2(result);
             if(result.size() == 1) {
                 int r = result.get(0)[0];
                 int c = result.get(0)[1];
-//                for(int[] pos: result) {
-//                    System.out.print("["+pos[0]+", "+pos[1]+"] ");
-//                }
-//                System.out.println();
-//                System.out.println(stdNum+" is case 2");
                 map[r][c] = stdNum;
             } else {
                 result.sort(new Comparator<int[]>() {
@@ -90,11 +72,6 @@ public class BOJ_21608 {
                 });
                 int r = result.get(0)[0];
                 int c = result.get(0)[1];
-//                for(int[] pos: result) {
-//                    System.out.print("["+pos[0]+", "+pos[1]+"] ");
-//                }
-//                System.out.println();
-//                System.out.println(stdNum+" is case 3");
                 map[r][c] = stdNum;
             }
         }
