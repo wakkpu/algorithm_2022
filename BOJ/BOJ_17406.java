@@ -8,8 +8,6 @@ public class BOJ_17406 {
     static int N, M, K, minValueA;
     static int[][] arr;
     static int[][] info;
-    static int[] dr = {0, 1, 0, -1};
-    static int[] dc = {-1, 0, 1, 0};
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
