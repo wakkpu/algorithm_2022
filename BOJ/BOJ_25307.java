@@ -43,8 +43,8 @@ public class BOJ_25307 {
             }
         }
 
-        map[start[0]][start[1]] = 0;
-        //printMap();
+        //map[start[0]][start[1]] = 0;
+        printMap();
 
         bfs(start);
 
@@ -77,7 +77,7 @@ public class BOJ_25307 {
                 int nr = sr + dr[d];
                 int nc = sc + dc[d];
 
-                if(isIn(nr, nc) && !visited[nr][nc] && map[nr][nc] != 1) {
+                if(isIn(nr, nc) && !visited[nr][nc] && (map[nr][nc] == 0 || map[nr][nc] == 2)) {
                     visited[nr][nc] = true;
                     q.offer(new int[]{nr, nc, step + 1});
                 }
