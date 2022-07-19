@@ -1,4 +1,4 @@
-package BOJ;
+package BOJ.DynamicProgramming.Memoization;
 
 import java.io.*;
 import java.util.*;
@@ -13,7 +13,7 @@ public class BOJ_17090 {
     /*
     1. 모든 [r][c]에서 출발 -> 시간 초과
     2. Memoization 적용 -> 시간 초과
-    3. 매번 boolean[][] visited 생성이 문제인 듯 -> isSuccess의 int값으로 변경 -> 정답답
+    3. 매번 boolean[][] visited 생성이 문제인 듯 -> isSuccess의 int값으로 변경 -> 정답
     */
 
     public static void main(String[] args) throws IOException {
