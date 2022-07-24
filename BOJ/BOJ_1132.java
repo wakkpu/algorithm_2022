@@ -32,6 +32,8 @@ public class BOJ_1132 {
         long result = 0;
         int value = 9;
 
+        // 0으로 시작하는 수는 없다. -> 이 조건 어떡해야 할까
+
         for(Integer num: nums) {
             result += (long) num * (value--);
         }
