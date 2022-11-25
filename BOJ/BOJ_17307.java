@@ -23,44 +23,41 @@ public class BOJ_17307 {
             return;
         }
 
-        // 숫자 변하는 패턴
-        int[][] switches = new int[C][C];
-        for(int j=0; j<C; j++) {
-            switches[0][j] = j;
-        }
-        for(int i=1; i<C; i++) {
-            switches[i][0] = switches[i-1][C-1];
-            for(int j=1; j<C; j++) {
-                switches[i][j] = switches[i-1][j-1];
+        // i가 j와 같은 숫자가 되기 위해 몇 번 바뀌어야 하는지
+        int[] left = new int[N];
+        for(int i=N-1; i>=1; i--) {
+            if(init[i] <= init[i-1]) {
+                left[i-1] = Math.abs(init[i] - init[i-1]);
+            } else {
+                left[i-1] = C - Math.abs(init[i] - init[i-1]);
             }
         }
+//        System.out.println(Arrays.toString(left));
 
-        // i가 j와 같은 숫자가 되기 위해 몇 번 바뀌어야 하는지
-        int[][] pushes = new int[N][N];
-        for(int i=0; i<N-1; i++) {
-            pushes[i][i+1] = switches[init[i]][init[i+1]];
+        int[] right = new int[N];
+        for(int i=1; i<N; i++) {
+            if(init[i-1] <= init[i]) {
+                right[i] = Math.abs(init[i-1] - init[i]);
+            } else {
+                right[i] = C - Math.abs(init[i-1] - init[i]);
+            }
         }
-        for(int i=N-1; i>=1; i--) {
-            pushes[i][i-1] = switches[init[i]][init[i-1]];
-        }
+//        System.out.println(Arrays.toString(right));
 
         int minPush = Integer.MAX_VALUE;
         int minButton = Integer.MAX_VALUE;
 
         for(int start=0; start<N; start++) {
-
             int leftPush = 0;
-            int leftR = start;
             int leftC = start-1;
-            while(leftR >= 0 && leftC >= 0) {
-                leftPush += pushes[leftR--][leftC--];
+            while(leftC >= 0) {
+                leftPush += left[leftC--];
             }
 
             int rightPush = 0;
-            int rightR = start;
             int rightC = start+1;
-            while(rightR < N && rightC < N) {
-                rightPush += pushes[rightR++][rightC++];
+            while(rightC < N) {
+                rightPush += right[rightC++];
             }
 
             if(Math.max(leftPush, rightPush) < minPush) {
