@@ -5,6 +5,11 @@ import java.util.*;
 
 public class BOJ_1082 {
 
+    /*
+    가장 싼 숫자로 최대한 많이 삼.
+    앞 자리부터 그 다음 싼 숫자로 대체해가면서 확인.
+    */
+
     static int N, M;
     static Number[] numbers;
 
