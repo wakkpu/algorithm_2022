@@ -23,8 +23,8 @@ public class BOJ_17307 {
             return;
         }
 
-        // i가 j와 같은 숫자가 되기 위해 몇 번 바뀌어야 하는지
-        int[] left = new int[N];
+        // i번째 버튼이 인접한 버튼과 같은 숫자가 되기 위해 몇 번 바뀌어야 하는지
+        long[] left = new long[N];
         for(int i=N-1; i>=1; i--) {
             if(init[i] <= init[i-1]) {
                 left[i-1] = Math.abs(init[i] - init[i-1]);
@@ -34,7 +34,7 @@ public class BOJ_17307 {
         }
 //        System.out.println(Arrays.toString(left));
 
-        int[] right = new int[N];
+        long[] right = new long[N];
         for(int i=1; i<N; i++) {
             if(init[i-1] <= init[i]) {
                 right[i] = Math.abs(init[i-1] - init[i]);
@@ -44,25 +44,34 @@ public class BOJ_17307 {
         }
 //        System.out.println(Arrays.toString(right));
 
-        int minPush = Integer.MAX_VALUE;
-        int minButton = Integer.MAX_VALUE;
+        // 누적합
+        long[] leftSum = new long[N];
+        leftSum[N-1] = left[N-1];
+        for(int i=N-1; i>=1; i--) {
+            leftSum[i-1] = leftSum[i] + left[i-1];
+        }
+//        System.out.println(Arrays.toString(leftSum));
+
+
+        long[] rightSum = new long[N];
+        rightSum[0] = right[0];
+        for(int i=1; i<N; i++) {
+            rightSum[i] = rightSum[i-1] + right[i];
+        }
+//        System.out.println(Arrays.toString(rightSum));
+
+        long minPush = Long.MAX_VALUE;
+        long minButton = Long.MAX_VALUE;
 
         for(int start=0; start<N; start++) {
-            int leftPush = 0;
-            int leftC = start-1;
-            while(leftC >= 0) {
-                leftPush += left[leftC--];
-            }
+            long leftPush = leftSum[0] - leftSum[start];
+            long rightPush = rightSum[N-1] - rightSum[start];
 
-            int rightPush = 0;
-            int rightC = start+1;
-            while(rightC < N) {
-                rightPush += right[rightC++];
-            }
-
-            if(Math.max(leftPush, rightPush) < minPush) {
-                minButton = start+1;
-                minPush = Math.max(leftPush, rightPush);
+//            System.out.println("start : "+(start+1)+" leftPush : "+leftPush+" rightPush : "+rightPush);
+            long push = Math.max(leftPush, rightPush);
+            if(push < minPush) {
+                minButton = (start+1);
+                minPush = push;
             }
         }
         System.out.println(minButton);
